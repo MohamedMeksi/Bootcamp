@@ -1,4 +1,4 @@
-my_name = "mohamedomar"
+my_name = "mohamed"
 
 while True:
     user_name = input("Please enter your name: ")
