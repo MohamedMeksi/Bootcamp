@@ -15,7 +15,7 @@ class Zoo:
     def get_animals(self):
         """Affiche la liste des animaux."""
         if self.animals:
-            print("Animaux dans le zoo :", ", ".join(self.animals))
+            print("Animaux dans le zoo :" , self.animals)
         else:
             print("Le zoo ne contient aucun animal.")
 
