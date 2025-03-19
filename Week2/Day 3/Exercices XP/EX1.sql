@@ -27,12 +27,20 @@ INSERT INTO new_film (name) VALUES ('SAW x'), ('12 Angry man'), ('Marvel');
 
 CREATE TABLE customer_review (
     review_id SERIAL PRIMARY KEY,
-    film_id INT REFERENCES new_film(id) ON DELETE CASCADE,
-    language_id INT REFERENCES language(language_id),
+    film_id INT,
+    language_id INT,
     title VARCHAR(255) NOT NULL,
     score INT CHECK (score BETWEEN 1 AND 10),
     review_text TEXT,
-    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_film FOREIGN KEY (film_id) 
+        REFERENCES new_film(id) 
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE,
+    CONSTRAINT fk_language FOREIGN KEY (language_id) 
+        REFERENCES language(language_id) 
+        ON DELETE SET NULL 
+        ON UPDATE CASCADE
 );
 
 -- Ajoutez deux critiques de films. Assurez-vous de les lier à des objets valides dans les autres tables.
