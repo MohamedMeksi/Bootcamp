@@ -4,7 +4,7 @@ SELECT * FROM language ;
 -- Get a list of all films joined with their languages – select the following details : film title, description, and language name.
 SELECT film.title , film.description , language.name AS language_name
 FROM film
-JOIN language ON film.film_id = language.language_id;
+JOIN language ON film.language_id = language.language_id;
 
 -- Get all languages, even if there are no films in those languages – select the following details : film title, description, and language name.
 
