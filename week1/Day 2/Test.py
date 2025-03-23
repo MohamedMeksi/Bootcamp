@@ -95,19 +95,26 @@
 # print(make_sentence(a="hello ", b="world ", c="python"))
 
 
-def human_details(**kwargs):
-    for key, value in kwargs.items():
-        print(key, value)
+# def human_details(**kwargs):
+#     for key, value in kwargs.items():
+#         print(key, value)
 
 
-print(human_details(name="mike", age=20 , country="USA"))
-
-
-
+# print(human_details(name="mike", age=20 , country="USA"))
 
 
 
+# def fun1():
+#     global x
+#     x = 20
+#     def fun2():
+#         global x
+#         x = 30
+#         print('x =',x)
+#     fun2() 
 
+# fun1()
+# print('x =',x)
 
 
 
