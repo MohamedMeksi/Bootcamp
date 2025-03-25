@@ -46,8 +46,11 @@
 // !unshift({item})ajoutera un nouvel élément à l'en-tête de la liste. Il deviendra l'index 0.
 
 
-
-
+  const myFunc1 = (x, y) => {
+    return console.log(x + y)
+  }
+  
+  myFunc1(6,7)
 
 
 
