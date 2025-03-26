@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloring Squares</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: darkgrey;
+        }
+        #sidebar {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            width: 20%;
+            height: 100vh;
+            float: left;
+            background-color: darkgrey;
+            padding: 5px;
+        }
+        #main {
+            display: grid;
+            grid-template-columns: repeat(60, 1fr);
+            height: 100vh;
+            padding: 5px 5px 5px 0;
+        }
+        #sidebar > div {
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        #main > div {
+            border: 1px solid lightgray;
+            background-color: white;
+        }
+        button {
+            grid-column: span 3;
+            background-color: whitesmoke;
+            border: none;
+            border-radius: 8px;
+            font-size: 22px;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <button id="clearBtn">Clear</button>
+        <div style="background-color: red;"></div>
+        <div style="background-color: orangered;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellowgreen;"></div>
+        <div style="background-color: lightgreen;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: turquoise;"></div>
+        <div style="background-color: cyan;"></div>
+        <div style="background-color: lightskyblue;"></div>
+        <div style="background-color: dodgerblue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: darkblue;"></div>
+        <div style="background-color: indigo;"></div>
+        <div style="background-color: darkmagenta;"></div>
+        <div style="background-color: violet;"></div>
+        <div style="background-color: lightpink;"></div>
+        <div style="background-color: lightgray;"></div>
+        <div style="background-color: gray;"></div>
+        <div style="background-color: black; border: 1px solid white;"></div>
+        <div style="background-color: white;"></div>
+    </div>
+    <div id="main"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
