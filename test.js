@@ -102,17 +102,22 @@
 //   return result;
 // }
 
-const person = {
-  name: 'Lydia',
-  age: 21,
-};
+// const person = {
+//   name: 'Lydia',
+//   age: 21,
+// };
 
-for (const item in person) {
-  console.log(item);
+// for (const item in person) {
+//   console.log(item);
   
-}
+// }
 
 
+const numbers = [10,11,12,15,20];
+
+numbers.forEach((number, index) => {
+  console.log(number * 2);
+});
 
 
 
