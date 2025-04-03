@@ -113,18 +113,44 @@
 // }
 
 
-const numbers = [10,11,12,15,20];
+// const numbers = [10,11,12,15,20];
 
-numbers.forEach((number, index) => {
-  console.log(number * 2);
-});
+// numbers.forEach((number, index) => {
+//   console.log(number * 2);
+// });
+
+// class Rectangle {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+//   // Method
+//   calcArea() {
+//     return this.height * this.width;
+//   }
+// }
+
+// //instance of the class Rectangle
+// const square = new Rectangle(10, 10);
+
+// //calling the method
+// console.log(square.calcArea()); // 100
+
+// console.log(square)
 
 
+class Rabbit {
+  constructor(type) {
+      this.type = type;
+  }
+  speak(line) {
+      console.log(`The ${this.type} rabbit says '${line}'`);
+  }
+}
+let killerRabbit = new Rabbit("killer");
+let blackRabbit = new Rabbit("black");
 
-
-
-
-
+console.log(killerRabbit.speak("I'm a killer rabbit!"));
 
 
 
