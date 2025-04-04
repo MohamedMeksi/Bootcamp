@@ -1,0 +1,138 @@
+
+@import url('https://fonts.cdnfonts.com/css/sega-logo-font');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+h1 {
+  font-family: 'SEGA LOGO FONT', sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  margin: 30px 0;
+  letter-spacing: 5px;
+  font-weight: normal;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+                 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+                 0 0 30px rgba(255, 255, 255, 0.7),
+                 0 0 40px rgba(255, 255, 255, 0.5);
+  }
+}
+
+
+#search {
+  width: 60%;
+  max-width: 500px;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+}
+
+#search:focus {
+  outline: none;
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+#search::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+
+
+#robots-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  
+}
+.card img {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: -60px auto 15px; 
+    background-color: #556cfc;
+    z-index: 2; 
+    transition: all 0.3s ease;
+  }
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+    margin: 10px;
+  width: 220px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: animatetop 0.6s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+
+@keyframes animatetop {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+#robots-container:hover .card:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.8;
+}
