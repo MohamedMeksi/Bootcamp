@@ -139,20 +139,29 @@
 // console.log(square)
 
 
-class Rabbit {
-  constructor(type) {
-      this.type = type;
-  }
-  speak(line) {
-      console.log(`The ${this.type} rabbit says '${line}'`);
-  }
-}
-let killerRabbit = new Rabbit("killer");
-let blackRabbit = new Rabbit("black");
+// class Rabbit {
+//   constructor(type) {
+//       this.type = type;
+//   }
+//   speak(line) {
+//       console.log(`The ${this.type} rabbit says '${line}'`);
+//   }
+// }
+// let killerRabbit = new Rabbit("killer");
+// let blackRabbit = new Rabbit("black");
 
-console.log(killerRabbit.speak("I'm a killer rabbit!"));
+// console.log(killerRabbit.speak("I'm a killer rabbit!"));
 
 
+let promise1 = new Promise((resolve, reject) => {
+  resolve(1);
+});
+let promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve(2), 100);
+});
+Promise.all([promise1, promise2]).then(() => {
+  console.log("Both promises resolved successfully.");
+});
 
 
 
