@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Défi Morse</title>
+</head>
+<body>
+    <h2>Traduction Morse :</h2>
+    <pre id="output"></pre>
+
+    <script>
+        const morse = `{
+            "0": "-----",
+            "1": ".----",
+            "2": "..---",
+            "3": "...--",
+            "4": "....-",
+            "5": ".....",
+            "6": "-....",
+            "7": "--...",
+            "8": "---..",
+            "9": "----.",
+            "a": ".-",
+            "b": "-...",
+            "c": "-.-.",
+            "d": "-..",
+            "e": ".",
+            "f": "..-.",
+            "g": "--.",
+            "h": "....",
+            "i": "..",
+            "j": ".---",
+            "k": "-.-",
+            "l": ".-..",
+            "m": "--",
+            "n": "-.",
+            "o": "---",
+            "p": ".--.",
+            "q": "--.-",
+            "r": ".-.",
+            "s": "...",
+            "t": "-",
+            "u": "..-",
+            "v": "...-",
+            "w": ".--",
+            "x": "-..-",
+            "y": "-.--",
+            "z": "--..",
+            ".": ".-.-.-",
+            ",": "--..--",
+            "?": "..--..",
+            "!": "-.-.--",
+            "-": "-....-",
+            "/": "-..-.",
+            "@": ".--.-.",
+            "(": "-.--.",
+            ")": "-.--.-"
+        }`;
+
+        function toJs() {
+            return new Promise((resolve, reject) => {
+                const morseJS = JSON.parse(morse);
+                if (Object.keys(morseJS).length === 0) {
+                    reject("Erreur : objet morse vide.");
+                } else {
+                    resolve(morseJS);
+                }
+            });
+        }
+
+        function toMorse(morseJS) {
+            return new Promise((resolve, reject) => {
+                const userInput = prompt("Entrez un mot ou une phrase à traduire en Morse :").toLowerCase();
+                const translated = [];
+
+                for (let char of userInput) {
+                    if (morseJS[char]) {
+                        translated.push(morseJS[char]);
+                    } else {
+                        reject(`Caractère non reconnu : "${char}"`);
+                        return;
+                    }
+                }
+
+                resolve(translated);
+            });
+        }
+
+
+        function joinWords(morseTranslation) {
+            const output = document.getElementById("output");
+            output.textContent = morseTranslation.join("\n");
+        }
+
+
+        toJs()
+            .then((morseJS) => toMorse(morseJS))
+            .then((morseTranslation) => joinWords(morseTranslation))
+            .catch((error) => {
+                document.getElementById("output").textContent = `❌ ${error}`;
+            });
+    </script>
+</body>
+</html>
