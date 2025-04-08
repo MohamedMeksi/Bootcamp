@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIF Search</title>
+    <style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#searchInput {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e15c53;
+}
+
+.gif-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gif-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.gif-item img {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.gif-item button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gif-item button:hover {
+  background-color: #e15c53;
+}
+
+#deleteAll {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #ff6f61;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#deleteAll:hover {
+  background-color: #e15c53;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Search for Random GIFs</h1>
+    <form id="gifForm">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter category..."
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div class="gif-container" id="gifContainer"></div>
+    <button id="deleteAll">Delete All</button>
+    <script src="Gifs.js"></script>
+  </body>
+</html>
