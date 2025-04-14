@@ -1,4 +1,10 @@
-const myFunc1 = (x, y) => {
-    return x + y;
+function make_pizza(size, ...toppings) {
+  console.log(`\nMaking a ${size}-inch pizza with the following toppings:`)
+  for (toppings of toppings) {
+      console.log("- " + topping)
   }
-myFunc1(1, 2);
+}
+
+export default {
+  make_pizza,
+}

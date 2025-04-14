@@ -153,19 +153,25 @@
 // console.log(killerRabbit.speak("I'm a killer rabbit!"));
 
 
-let promise1 = new Promise((resolve, reject) => {
-  resolve(1);
-});
-let promise2 = new Promise((resolve, reject) => {
-  setTimeout(resolve(2), 100);
-});
-Promise.all([promise1, promise2]).then(() => {
-  console.log("Both promises resolved successfully.");
-});
+// let promise1 = new Promise((resolve, reject) => {
+//   resolve(1);
+// });
+// let promise2 = new Promise((resolve, reject) => {
+//   setTimeout(resolve(2), 100);
+// });
+// Promise.all([promise1, promise2]).then(() => {
+//   console.log("Both promises resolved successfully.");
+// });
 
 
 
 
+
+
+import { make_pizza } from './pizza.js';
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
 
 
