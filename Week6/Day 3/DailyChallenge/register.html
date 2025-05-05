@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <script>
+      function validateRegisterForm() {
+        const fields = ["name", "lastname", "email", "username", "password"];
+        const isValid = fields.every((id) =>
+          document.getElementById(id).value.trim()
+        );
+        document.getElementById("submitBtn").disabled = !isValid;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Register</h2>
+    <form action="/users/register" method="POST">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="First Name"
+        oninput="validateRegisterForm()"
+      /><br />
+      <input
+        type="text"
+        id="lastname"
+        name="lastname"
+        placeholder="Last Name"
+        oninput="validateRegisterForm()"
+      /><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
+        oninput="validateRegisterForm()"
+      /><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        oninput="validateRegisterForm()"
+      /><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        oninput="validateRegisterForm()"
+      /><br />
+      <button type="submit" id="submitBtn" disabled>Register</button>
+    </form>
+    <!-- Add this below the form -->
+    <p id="message"></p>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+
+        const response = await fetch("/users/register", {
+          method: "POST",
+          body: new URLSearchParams(data),
+        });
+
+        const text = await response.text();
+        document.getElementById("message").textContent = text;
+      });
+    </script>
+  </body>
+</html>
